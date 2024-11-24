@@ -42,7 +42,6 @@ function TaskCard({ title, description, _id, updatedAt }) {
 
   return (
     <>
-      {/* <Container> */}
       <div
         className="flex justify-center items-center flex-col w-full
       "
@@ -88,7 +87,6 @@ function TaskCard({ title, description, _id, updatedAt }) {
           />
         </div>
       </div>
-      {/* </Container> */}
     </>
   );
 }

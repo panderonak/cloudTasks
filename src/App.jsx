@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header, CreateTask } from "./components";
+import { Header, CreateTask, Footer } from "./components";
 import { Outlet } from "react-router";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 }
