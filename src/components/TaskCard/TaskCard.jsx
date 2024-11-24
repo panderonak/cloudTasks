@@ -71,19 +71,19 @@ function TaskCard({ title, description, _id, updatedAt }) {
           <Button
             children="Update"
             bgColor="bg-[#005182]"
-            className="px-3 py-2 font-mono text-[0.8rem]"
+            className="px-3 py-2 font-mono text-[0.8rem] hover:bg-[rgb(3,100,160)] duration-200"
             onClick={() => navigate("/update", { state: { id: _id } })}
           />
           <Button
             children="Delete"
             bgColor="bg-[red]"
-            className="px-3 py-2 font-mono text-[0.8rem]"
+            className="px-3 py-2 font-mono text-[0.8rem] hover:bg-[rgb(193,32,32)] duration-200"
             onClick={() => handleDelete(_id)}
           />
           <Button
             children={isTaskComplete ? "Done" : "Undo"}
             bgColor="bg-[#005182]"
-            className="px-3 py-2 font-mono text-[0.8rem]"
+            className="px-3 py-2 font-mono text-[0.8rem] hover:bg-[rgb(3,100,160)] duration-200"
             onClick={() => handelDone(_id)}
           />
         </div>

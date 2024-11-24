@@ -94,7 +94,7 @@ function CreateTask() {
               <Button
                 type="submit"
                 bgColor="bg-[#006DAA]"
-                className="font-semibold"
+                className="font-semibold hover:bg-[rgb(19,124,185)] duration-200"
                 children={"Update"}
               />
             </div>

@@ -70,7 +70,7 @@ function CreateTask() {
                 bgColor="bg-[#006DAA]"
                 textColor="text-[#fff]"
                 children={"Add Task"}
-                className="font-semibold"
+                className="font-semibold hover:bg-[rgb(19,124,185)] duration-200"
               />
             </div>
           </form>

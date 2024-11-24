@@ -22,7 +22,7 @@ function Header() {
             {navItems.map((item) => (
               <li key={item.name}>
                 <button
-                  className="text-[#B9D6F2] bg-[#005182] px-5 py-1 rounded-3xl text-[1.2rem] hover:bg-[#B9D6F2] hover:text-[#005182] duration-75 font-semibold"
+                  className="text-[#B9D6F2] bg-[#005182] px-5 py-1 rounded-3xl text-[1.2rem] hover:bg-[#B9D6F2] hover:text-[#005182] duration-300 font-semibold"
                   onClick={() => navigate(item.slug)}
                 >
                   {item.name}
