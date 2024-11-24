@@ -39,7 +39,7 @@ function Task() {
 
   return (
     <>
-      <div className="pt-20 pb-28 bg-[#E2E2E2] h-screen">
+      <div className="pt-20 pb-28">
         <Container>
           <div className="flex flex-wrap">
             {tasks.map((task) => (

@@ -39,7 +39,6 @@ function CreateTask() {
   };
   return (
     <Container>
-      <div>createTask</div>
       <div className="flex justify-center items-center mt-44">
         <div className="bg-[#003559] w-1/2 p-10 rounded-[2rem]">
           <form
@@ -50,7 +49,8 @@ function CreateTask() {
               <Input
                 label="Title"
                 type="text"
-                className="bg-[#0353A4] outline-none"
+                placeholder="Title"
+                className="bg-[#0353A4] outline-none text-[#fff] placeholder:text-white font-semibold"
                 {...register("title", { required: true })}
               />
             </div>
@@ -59,7 +59,7 @@ function CreateTask() {
                 label="Description"
                 type="text"
                 placeholder="Description"
-                className="bg-[#0353A4] outline-none"
+                className="bg-[#0353A4] outline-none text-[#fff] placeholder:text-white font-semibold"
                 {...register("description", { required: true })}
               />
             </div>
@@ -68,7 +68,9 @@ function CreateTask() {
               <Button
                 type="submit"
                 bgColor="bg-[#006DAA]"
+                textColor="text-[#fff]"
                 children={"Add Task"}
+                className="font-semibold"
               />
             </div>
           </form>

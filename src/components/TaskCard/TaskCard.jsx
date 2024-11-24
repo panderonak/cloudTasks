@@ -47,29 +47,30 @@ function TaskCard({ title, description, _id, updatedAt }) {
         className="flex justify-center items-center flex-col w-full
       "
       >
+        <div></div>
         <h1 className="w-full text-wrap text-center p-3 font-semibold font-sans text-base text-gray-500">{`${updatedFormattedDateTime}`}</h1>
-        <div className="bg-[#00072D] text-[#EEF4ED] w-full px-7 py-5 text-center rounded-tr-2xl rounded-tl-2xl">
+        <div className="bg-[#003559] text-[#EEF4ED] w-full px-7 py-5 text-center rounded-tr-2xl rounded-tl-2xl font-sans font-semibold">
           <h2
             className={`${
-              isTaskComplete ? "line-through text-gray-500" : "text-[#EEF4ED]"
+              isTaskComplete ? "line-through text-gray-500" : "text-[#B9D6F2]"
             }`}
           >
             {title}
           </h2>
         </div>
-        <div className="bg-[#001C55] text-[#8DA9C4] w-full px-7 py-8 text-left">
+        <div className="bg-[#0353A4] text-[#8DA9C4] w-full px-7 py-8 text-left font-sans font-normal">
           <p
             className={`${
-              isTaskComplete ? "line-through text-gray-500" : "text-[#8DA9C4]"
+              isTaskComplete ? "line-through text-gray-500" : "text-[#B9D6F2]"
             }`}
           >
             {description}
           </p>
         </div>
-        <div className="bg-[#A6E1FA] px-2 py-4 rounded-br-2xl rounded-bl-2xl gap-4 w-full flex justify-center">
+        <div className="bg-[#003559] px-2 py-4 rounded-br-2xl rounded-bl-2xl gap-4 w-full flex justify-center font-semibold">
           <Button
             children="Update"
-            bgColor="bg-[#0E6BA8]"
+            bgColor="bg-[#005182]"
             className="px-3 py-2 font-mono text-[0.8rem]"
             onClick={() => navigate("/update", { state: { id: _id } })}
           />
@@ -81,7 +82,7 @@ function TaskCard({ title, description, _id, updatedAt }) {
           />
           <Button
             children={isTaskComplete ? "Done" : "Undo"}
-            bgColor="bg-[#0E6BA8]"
+            bgColor="bg-[#005182]"
             className="px-3 py-2 font-mono text-[0.8rem]"
             onClick={() => handelDone(_id)}
           />
