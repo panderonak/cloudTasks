@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllTasks } from "../../features/taskSlice";
 import { useEffect, useState } from "react";
+import todoService from "../../freeAPI/todoService";
 
 function CreateTask() {
   const dispatch = useDispatch();
@@ -18,42 +19,21 @@ function CreateTask() {
   useEffect(() => {
     if (todoId) {
       const getTask = async () => {
-        const options = {
-          method: "GET",
-          url: `/api/v1/todos/${todoId}`,
-          headers: { accept: "application/json" },
-        };
+        const todo = await todoService.getTodoByID(todoId);
         try {
-          const { data } = await axios.request(options);
-          if (data.success) {
-            const title = data.data.title;
-            const description = data.data.description;
-            setValue("title", title);
-            setValue("description", description);
-          }
-        } catch (error) {}
+          setValue("title", todo.title);
+          setValue("description", todo.description);
+        } catch (error) {
+          console.error("Failed to fetch task details:", error);
+        }
       };
       getTask();
     }
   }, [todoId, setValue]);
 
   const updateTask = async (data) => {
-    const options = {
-      method: "PATCH",
-      url: `/api/v1/todos/${todoId}`,
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-      },
-      data: {
-        description: data.description,
-        title: data.title,
-      },
-    };
-
     try {
-      const { data } = await axios.request(options);
-      const updatedTask = data.data;
+      const updatedTask = await todoService.updateTodo({ ...data, todoId });
       const updatedTasks = tasks.map((task) =>
         task._id === updatedTask._id ? updatedTask : task
       );
@@ -65,7 +45,7 @@ function CreateTask() {
   };
   return (
     <Container>
-      <div className="flex justify-center items-center mt-44">
+      <div className="flex justify-center items-center mt-44 mb-52">
         <div className="bg-[#003559] w-1/2 p-10 rounded-[2rem]">
           <form
             className="flex gap-4 flex-col"

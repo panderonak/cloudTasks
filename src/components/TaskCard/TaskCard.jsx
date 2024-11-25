@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { deleteTask } from "../../features/taskSlice";
+import todoService from "../../freeAPI/todoService";
 
 function TaskCard({ title, description, _id, updatedAt }) {
   const [isTaskComplete, setIsTaskComplete] = useState("");
@@ -11,29 +12,22 @@ function TaskCard({ title, description, _id, updatedAt }) {
   const navigate = useNavigate();
 
   const handleDelete = async (todoId) => {
-    const options = {
-      method: "DELETE",
-      url: `/api/v1/todos/${todoId}`,
-      headers: { accept: "application/json" },
-    };
+    const result = await todoService.deleteTodo(todoId);
     try {
-      const { data } = await axios.request(options);
-      dispatch(deleteTask(todoId));
-    } catch (error) {}
+      if (result) dispatch(deleteTask(todoId));
+    } catch (error) {
+      throw error;
+    }
   };
 
   const handelDone = async (todoId) => {
-    const options = {
-      method: "PATCH",
-      url: `/api/v1/todos/toggle/status/${todoId}`,
-      headers: { accept: "application/json" },
-    };
+    const result = await todoService.doneTodo(todoId);
 
     try {
-      const { data } = await axios.request(options);
-      const isComplete = data.data.isComplete;
-      setIsTaskComplete(isComplete);
-    } catch (error) {}
+      setIsTaskComplete(result);
+    } catch (error) {
+      throw error;
+    }
   };
 
   const isUpdatedAt = `${updatedAt}`;

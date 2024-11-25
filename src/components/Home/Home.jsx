@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAllTasks } from "../../features/taskSlice";
 import TaskCard from "../TaskCard/TaskCard";
 import Container from "../Container/Container";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
+import todoService from "../../freeAPI/todoService";
 
 function Task() {
   const dispatch = useDispatch();
@@ -15,19 +16,10 @@ function Task() {
   useEffect(() => {
     if (!tasks || tasks.length === 0) {
       const getAllTasks = async () => {
-        const options = {
-          method: "GET",
-          url: "/api/v1/todos",
-          params: { complete: "false" },
-          headers: { accept: "application/json" },
-        };
-        try {
-          const { data } = await axios.request(options);
+        const allTodos = await todoService.getAllTodo();
 
-          if (data.success == true) {
-            const allTodos = data.data;
-            dispatch(setAllTasks(allTodos));
-          }
+        try {
+          dispatch(setAllTasks(allTodos));
         } catch (error) {
           throw error;
         }

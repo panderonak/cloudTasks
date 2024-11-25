@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllTasks } from "../../features/taskSlice";
+import todoService from "../../freeAPI/todoService";
 
 function CreateTask() {
   const navigate = useNavigate();
@@ -13,33 +14,18 @@ function CreateTask() {
   const tasks = useSelector((state) => state.todos.allTasks);
 
   const createNewTask = async (data) => {
-    const options = {
-      method: "POST",
-      url: "/api/v1/todos/",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-      },
-      data: {
-        description: data.description,
-        title: data.title,
-      },
-    };
+    const newTask = await todoService.createTodo({ ...data });
 
     try {
-      const { data } = await axios.request(options);
-      if (data.success) {
-        const newTask = data.data;
-        dispatch(setAllTasks([newTask, ...tasks]));
-        navigate("/");
-      }
+      dispatch(setAllTasks([newTask, ...tasks]));
+      navigate("/");
     } catch (error) {
       throw error;
     }
   };
   return (
     <Container>
-      <div className="flex justify-center items-center mt-44">
+      <div className="flex justify-center items-center mt-44 mb-52">
         <div className="bg-[#003559] w-1/2 p-10 rounded-[2rem]">
           <form
             className="flex gap-4 flex-col"
