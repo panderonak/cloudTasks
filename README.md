@@ -143,13 +143,11 @@ src/
 - **Method:** `PATCH`
 - **Endpoint:** /:id
 - **Payload:**
-
   ```json
   {
-    title: string,
-    description: string
+    "title": "string",
+    "description": "string"
   }
-
   ```
 
 ### 5. Delete Task
