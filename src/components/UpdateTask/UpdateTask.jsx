@@ -7,7 +7,7 @@ import { setAllTasks } from "../../features/taskSlice";
 import { useEffect, useState } from "react";
 import todoService from "../../freeAPI/todoService";
 
-function CreateTask() {
+function UpdateTask() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const tasks = useSelector((state) => state.todos.allTasks);
@@ -85,4 +85,4 @@ function CreateTask() {
   );
 }
 
-export default CreateTask;
+export default UpdateTask;

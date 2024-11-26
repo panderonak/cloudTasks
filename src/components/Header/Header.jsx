@@ -37,5 +37,3 @@ function Header() {
 }
 
 export default Header;
-
-//TODO: Home(ALL TODOS), Create()
