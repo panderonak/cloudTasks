@@ -14,7 +14,7 @@ function Task() {
   const tasks = useSelector((state) => state.todos.allTasks);
 
   useEffect(() => {
-    if (!tasks || tasks.length === 0) {
+    if (!Boolean(tasks.length) || tasks.length === 0) {
       const getAllTasks = async () => {
         const allTodos = await todoService.getAllTodo();
 
@@ -27,15 +27,31 @@ function Task() {
 
       getAllTasks();
     }
-  }, [tasks, navigate]);
+  }, [tasks.length, navigate]);
+
+  if (tasks.length === 0) {
+    return (
+      <>
+        <div className="text-center min-h-screen">
+          <div className="pt-20">
+            <Container>
+              <p className="text-center text-gray-500">
+                No tasks yet. Start by adding your first task to see it here!
+              </p>
+            </Container>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
-      <div className="pt-20 pb-28">
+      <div className="pt-20 pb-28 min-h-screen">
         <Container>
-          <div className="flex flex-wrap">
+          <div className="gap-8 sm:columns-3">
             {tasks.map((task) => (
-              <div key={task._id} className="p-2 w-1/4 flex items-baseline">
+              <div key={task._id} className="mb-6 sm:break-inside-avoid">
                 <TaskCard {...task} />
               </div>
             ))}

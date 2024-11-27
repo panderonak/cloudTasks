@@ -10,7 +10,7 @@ function Footer() {
       <Container>
         <div className="flex h-full flex-col justify-between items-center">
           <div className="text-[#B9D6F2] mb-4">
-            <p className="text-base font-bold">
+            <p className="text-base font-bold text-center">
               &copy; {year} My Todo App. Crafted with ❤️ using React and the
               powerful{" "}
               <span className="underline font-semibold cursor-pointer hover:text-blue-500">
@@ -27,7 +27,7 @@ function Footer() {
             </p>
           </div>
           <div>
-            <p className="text-sm">
+            <p className="text-sm text-center">
               Need assistance? Check out the GitHub{" "}
               <span className="underline font-semibold cursor-pointer hover:text-blue-500">
                 {

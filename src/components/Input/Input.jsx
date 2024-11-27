@@ -8,7 +8,7 @@ function Input(
   return (
     <>
       <div className="">
-        <div>{label && <label htmlFor={ID}>{label}</label>}</div>
+        <div className="mb-5">{label && <label htmlFor={ID}></label>}</div>
         <div>
           <input
             type={type}

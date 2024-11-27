@@ -45,40 +45,42 @@ function UpdateTask() {
   };
   return (
     <Container>
-      <div className="flex justify-center items-center mt-44 mb-52">
-        <div className="bg-[#003559] w-1/2 p-10 rounded-[2rem]">
-          <form
-            className="flex gap-4 flex-col"
-            onSubmit={handleSubmit(updateTask)}
-          >
-            <div>
-              <Input
-                label="Title"
-                type="text"
-                placeholder="Title"
-                className="bg-[#0353A4] text-[#fff] placeholder:text-white outline-none font-semibold"
-                {...register("title", { required: true })}
-              />
-            </div>
-            <div>
-              <Input
-                label="Description"
-                type="text"
-                placeholder="Description"
-                className="bg-[#0353A4] text-[#fff] placeholder:text-white outline-none font-semibold"
-                {...register("description", { required: true })}
-              />
-            </div>
+      <div className="sm:flex sm:justify-center sm:items-center sm:mt-44 sm:mb-52 mt-40 mb-40">
+        <div className="grid grid-cols-12 sm:w-6/12 h-full">
+          <div className="col-span-12 bg-[#003559] w-full p-10 rounded-[2rem]">
+            <form
+              className="flex gap-4 flex-col"
+              onSubmit={handleSubmit(updateTask)}
+            >
+              <div>
+                <Input
+                  label="Title"
+                  type="text"
+                  placeholder="Title"
+                  className="bg-[#0353A4] text-[#fff] placeholder:text-white outline-none font-semibold"
+                  {...register("title", { required: true })}
+                />
+              </div>
+              <div>
+                <Input
+                  label="Description"
+                  type="text"
+                  placeholder="Description"
+                  className="bg-[#0353A4] text-[#fff] placeholder:text-white outline-none font-semibold"
+                  {...register("description", { required: true })}
+                />
+              </div>
 
-            <div className="flex justify-center mt-5">
-              <Button
-                type="submit"
-                bgColor="bg-[#006DAA]"
-                className="font-semibold hover:bg-[rgb(19,124,185)] duration-200"
-                children={"Update"}
-              />
-            </div>
-          </form>
+              <div className="flex justify-center mt-5">
+                <Button
+                  type="submit"
+                  bgColor="bg-[#006DAA]"
+                  className="font-semibold hover:bg-[rgb(19,124,185)] duration-200"
+                  children={"Update"}
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </Container>
