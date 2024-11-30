@@ -35,7 +35,7 @@ function Task() {
         <div className="text-center min-h-screen">
           <div className="pt-20">
             <Container>
-              <p className="text-center text-gray-500">
+              <p className="text-center text-gray-500 font-semibold font-sans">
                 No tasks yet. Start by adding your first task to see it here!
               </p>
             </Container>
@@ -51,7 +51,7 @@ function Task() {
         <Container>
           <div className="gap-8 sm:columns-3">
             {tasks.map((task) => (
-              <div key={task._id} className="mb-6 sm:break-inside-avoid">
+              <div key={task._id} className="mb-12 sm:break-inside-avoid">
                 <TaskCard {...task} />
               </div>
             ))}

@@ -13,7 +13,7 @@ function Input(
           <input
             type={type}
             placeholder={placeholder}
-            className={`px-5 py-3 rounded-3xl outline-none duration-200 w-full ${className}`}
+            className={`sm:px-7 px-4 sm:py-5 py-3 rounded-lg outline-none duration-200 w-full ${className}`}
             {...props}
             id={ID}
             ref={ref}
