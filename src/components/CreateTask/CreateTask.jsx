@@ -42,13 +42,6 @@ function CreateTask() {
                 />
               </div>
               <div className="mt-3">
-                {/* <Input
-                  label="Description"
-                  type="text"
-                  placeholder="Description"
-                  className="bg-[#0353A4] outline-none text-[#fff] placeholder:text-white font-semibold"
-                  {...register("description", { required: true })}
-                /> */}
                 <TextArea
                   label="Description"
                   type="text"

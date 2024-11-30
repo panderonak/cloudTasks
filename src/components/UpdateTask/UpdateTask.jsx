@@ -62,14 +62,6 @@ function UpdateTask() {
                 />
               </div>
               <div className="mt-3">
-                {/* <Input
-                  label="Description"
-                  type="text"
-                  placeholder="Description"
-                  className="bg-[#0353A4] text-[#fff] placeholder:text-white outline-none font-semibold"
-                  {...register("description", { required: true })}
-                />
-                   */}
                 <TextArea
                   label="Description"
                   placeholder="Description"
