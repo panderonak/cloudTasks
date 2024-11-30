@@ -7,7 +7,7 @@ import Container from "../Container/Container";
 import { useNavigate } from "react-router";
 import todoService from "../../freeAPI/todoService";
 
-function Task() {
+function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -62,4 +62,4 @@ function Task() {
   );
 }
 
-export default Task;
+export default Home;
