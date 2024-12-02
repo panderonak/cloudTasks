@@ -26,7 +26,7 @@ function CreateTask() {
   return (
     <Container>
       <div className="sm:flex sm:justify-center sm:items-center sm:mt-44 sm:mb-52 mt-40 mb-40">
-        <div className="grid grid-cols-12 sm:w-6/12 h-full">
+        <div className="grid grid-cols-12 sm:w-full md:w-4/6 lg:w-6/12 h-full">
           <div className="col-span-12 bg-[#003559] w-full p-6 sm:py-10 sm:px-12 rounded-2xl shadow-md shadow-[rgba(0,0,0,0.6)]">
             <form
               className="flex gap-5 flex-col"

@@ -22,7 +22,6 @@ function TaskCard({ title, description, _id, updatedAt }) {
 
   const handelDone = async (todoId) => {
     const result = await todoService.doneTodo(todoId);
-
     try {
       setIsTaskComplete(result);
     } catch (error) {
@@ -71,7 +70,7 @@ function TaskCard({ title, description, _id, updatedAt }) {
               {description}
             </p>
           </div>
-          <div className="bg-[#003559] px-2 py-4 rounded-br-2xl rounded-bl-2xl gap-4 w-full flex justify-center font-semibold">
+          <div className="bg-[#003559] px-2 py-4 rounded-br-2xl rounded-bl-2xl gap-4 w-full flex justify-center font-semibold flex-wrap">
             <Button
               children="Update"
               bgColor="bg-[#005182]"

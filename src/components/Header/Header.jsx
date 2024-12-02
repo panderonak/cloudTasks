@@ -18,7 +18,7 @@ function Header() {
     <header className="bg-[#061A40] py-5">
       <Container>
         <nav>
-          <ul className="flex justify-center items-center font-sans text-3xl gap-7">
+          <ul className="flex justify-center items-center font-sans text-2xl sm:text-3xl gap-7">
             {navItems.map((item) => (
               <li key={item.name}>
                 <button

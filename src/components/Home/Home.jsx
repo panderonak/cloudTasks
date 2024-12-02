@@ -49,7 +49,7 @@ function Home() {
     <>
       <div className="pt-20 pb-28 min-h-screen">
         <Container>
-          <div className="gap-8 sm:columns-3">
+          <div className="gap-8 sm:columns-2 lg:columns-3 columns-1">
             {tasks.map((task) => (
               <div key={task._id} className="mb-12 sm:break-inside-avoid">
                 <TaskCard {...task} />
